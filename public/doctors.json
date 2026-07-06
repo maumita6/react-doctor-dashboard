@@ -1,0 +1,138 @@
+[
+    {
+        "id": "DOC001",
+        "name": "Dr. Sarah Jenkins",
+        "qualification": "MD, FACC",
+        "specialist": "Cardiologist",
+        "exp": 14,
+        "days": [
+            "Monday",
+            "Wednesday",
+            "Friday"
+        ],
+        "status": "Active",
+        "email": "sarah.jenkins@hospital.com"
+    },
+    {
+        "id": "DOC002",
+        "name": "Dr. Marcus Chen",
+        "qualification": "MD, Ph.D.",
+        "specialist": "Neurologist",
+        "exp": 10,
+        "days": [
+            "Tuesday",
+            "Thursday"
+        ],
+        "status": "Active",
+        "email": "marcus.chen@hospital.com"
+    },
+    {
+        "id": "DOC003",
+        "name": "Dr. Elena Rostova",
+        "qualification": "MBBS, MD",
+        "specialist": "Pediatrician",
+        "exp": 8,
+        "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+        ],
+        "status": "Active",
+        "email": "elena.rostova@hospital.com"
+    },
+    {
+        "id": "DOC004",
+        "name": "Dr. Alan Mercer",
+        "qualification": "DO, FAAD",
+        "specialist": "Dermatologist",
+        "exp": 12,
+        "days": [
+            "Wednesday",
+            "Friday"
+        ],
+        "status": "Inactive",
+        "email": "alan.mercer@hospital.com"
+    },
+    {
+        "id": "DOC005",
+        "name": "Dr. Priya Nair",
+        "qualification": "MD, DM",
+        "specialist": "Endocrinologist",
+        "exp": 15,
+        "days": [
+            "Monday",
+            "Thursday"
+        ],
+        "status": "Active",
+        "email": "priya.nair@hospital.com"
+    },
+    {
+        "id": "DOC006",
+        "name": "Dr. Robert Vance",
+        "qualification": "MD, FACS",
+        "specialist": "Orthopedic Surgeon",
+        "exp": 18,
+        "days": [
+            "Tuesday",
+            "Friday"
+        ],
+        "status": "Active",
+        "email": "robert.vance@hospital.com"
+    },
+    {
+        "id": "DOC007",
+        "name": "Dr. Chloe Bennett",
+        "qualification": "MD",
+        "specialist": "Psychiatrist",
+        "exp": 6,
+        "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday"
+        ],
+        "status": "Active",
+        "email": "chloe.bennett@hospital.com"
+    },
+    {
+        "id": "DOC008",
+        "name": "Dr. Samuel Lee",
+        "qualification": "MD, FACP",
+        "specialist": "Gastroenterologist",
+        "exp": 11,
+        "days": [
+            "Thursday",
+            "Friday"
+        ],
+        "status": "Active",
+        "email": "samuel.lee@hospital.com"
+    },
+    {
+        "id": "DOC009",
+        "name": "Dr. Aisha Rahman",
+        "qualification": "MBBS, MS",
+        "specialist": "Ophthalmologist",
+        "exp": 9,
+        "days": [
+            "Monday",
+            "Wednesday",
+            "Thursday"
+        ],
+        "status": "Active",
+        "email": "aisha.rahman@hospital.com"
+    },
+    {
+        "id": "DOC010",
+        "name": "Dr. James Wilson",
+        "qualification": "MD, Ph.D.",
+        "specialist": "Oncologist",
+        "exp": 20,
+        "days": [
+            "Tuesday",
+            "Wednesday"
+        ],
+        "status": "Inactive",
+        "email": "james.wilson@hospital.com"
+    }
+]
