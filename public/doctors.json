@@ -10,8 +10,9 @@
             "Wednesday",
             "Friday"
         ],
-        "status": "Active",
-        "email": "sarah.jenkins@hospital.com"
+        "status": true,
+        "email": "sarah.jenkins@hospital.com",
+        "bio": "Passionate about cardiac wellness and preventive health management with over a decade of surgical experience."
     },
     {
         "id": "DOC002",
@@ -23,8 +24,10 @@
             "Tuesday",
             "Thursday"
         ],
-        "status": "Active",
-        "email": "marcus.chen@hospital.com"
+        "status": true,
+        "email": "marcus.chen@hospital.com",
+        "bio": "Passionate about cardiac wellness and preventive health management with over a decade of surgical experience."
+
     },
     {
         "id": "DOC003",
@@ -39,8 +42,10 @@
             "Thursday",
             "Friday"
         ],
-        "status": "Active",
-        "email": "elena.rostova@hospital.com"
+        "status": true,
+        "email": "elena.rostova@hospital.com",
+        "bio": "Passionate about cardiac wellness and preventive health management with over a decade of surgical experience."
+
     },
     {
         "id": "DOC004",
@@ -52,8 +57,10 @@
             "Wednesday",
             "Friday"
         ],
-        "status": "Inactive",
-        "email": "alan.mercer@hospital.com"
+        "status": false,
+        "email": "alan.mercer@hospital.com",
+        "bio": "Passionate about cardiac wellness and preventive health management with over a decade of surgical experience."
+
     },
     {
         "id": "DOC005",
@@ -65,8 +72,10 @@
             "Monday",
             "Thursday"
         ],
-        "status": "Active",
-        "email": "priya.nair@hospital.com"
+        "status": true,
+        "email": "priya.nair@hospital.com",
+        "bio": "Passionate about cardiac wellness and preventive health management with over a decade of surgical experience."
+
     },
     {
         "id": "DOC006",
@@ -78,8 +87,10 @@
             "Tuesday",
             "Friday"
         ],
-        "status": "Active",
-        "email": "robert.vance@hospital.com"
+        "status": true,
+        "email": "robert.vance@hospital.com",
+        "bio": "Passionate about cardiac wellness and preventive health management with over a decade of surgical experience."
+
     },
     {
         "id": "DOC007",
@@ -92,8 +103,10 @@
             "Tuesday",
             "Wednesday"
         ],
-        "status": "Active",
-        "email": "chloe.bennett@hospital.com"
+        "status": false,
+        "email": "chloe.bennett@hospital.com",
+        "bio": "Passionate about cardiac wellness and preventive health management with over a decade of surgical experience."
+
     },
     {
         "id": "DOC008",
@@ -105,8 +118,10 @@
             "Thursday",
             "Friday"
         ],
-        "status": "Active",
-        "email": "samuel.lee@hospital.com"
+        "status": true,
+        "email": "samuel.lee@hospital.com",
+        "bio": "Passionate about cardiac wellness and preventive health management with over a decade of surgical experience."
+
     },
     {
         "id": "DOC009",
@@ -119,8 +134,10 @@
             "Wednesday",
             "Thursday"
         ],
-        "status": "Active",
-        "email": "aisha.rahman@hospital.com"
+        "status": true,
+        "email": "aisha.rahman@hospital.com",
+        "bio": "Passionate about cardiac wellness and preventive health management with over a decade of surgical experience."
+
     },
     {
         "id": "DOC010",
@@ -132,7 +149,9 @@
             "Tuesday",
             "Wednesday"
         ],
-        "status": "Inactive",
-        "email": "james.wilson@hospital.com"
+        "status": false,
+        "email": "james.wilson@hospital.com",
+        "bio": "Passionate about cardiac wellness and preventive health management with over a decade of surgical experience."
+
     }
 ]

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate, Outlet } from 'react-router-dom';
 
 
-export default function Sidebar() {
+export default function Sidebar({setIsLoggedIn}) {
   const [isOpen, setIsOpen] = useState(false);
 
 
@@ -11,18 +11,25 @@ export default function Sidebar() {
   const goToDashboard = (event) => {
     event.preventDefault()
     event.stopPropagation();
-     navigate('./dashboard');
-};
-        
-    const goToDoctorListPage = (event) => {
-        event.preventDefault()
-        event.stopPropagation();
-         navigate('./doctors');
-    };
+    navigate('./dashboard');
+  };
+
+  const goToDoctorListPage = (event) => {
+    event.preventDefault()
+    event.stopPropagation();
+    navigate('./doctors');
+  };
+
+  const logoutPage = (event) => {
+    event.preventDefault()
+    event.stopPropagation();
+    setIsLoggedIn(false);
+    navigate('./');
+  };
 
 
   return (
-    <div className="flex h-screen bg-gray-100 overflow-hidden">      
+    <div className="flex h-screen bg-gray-100 overflow-hidden">
 
       {/* Sidebar Container */}
       <aside className={`
@@ -43,28 +50,39 @@ export default function Sidebar() {
             </svg>
             Home
           </a>
-          
+
           <a href="#" onClick={goToDoctorListPage} className="flex items-center px-4 py-2.5 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors">
             <svg className="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
             Doctors
           </a>
-          <a href="#" className="flex items-center px-4 py-2.5 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors">
-            <svg className="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-            Nurses
-          </a>
 
-          <a href="#" className="flex items-center px-4 py-2.5 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors">
+
+          <a href="#" onClick={logoutPage} className="flex items-center px-4 py-2.5 text-sm font-medium rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors">
             <svg className="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            Settings
+            Logout
           </a>
         </nav>
+        <button
+          className={`
+        group flex items-center justify-center gap-2 w-full px-6 py-3 mt-16 rounded-xl font-semibold text-sm
+        bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-500/10
+        transition-all duration-200 select-none
+        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-3
+      `}
+        ><span>
+          <Link
+          to={`/NewAppointment/`}
+          className={`block w-full text-center px-4 py-2 text-sm font-semibold rounded-lg transition-all`}
+        >
+Schedule Appointment
+        </Link>
+          
+          </span></button>
       </aside>
     </div>
   );

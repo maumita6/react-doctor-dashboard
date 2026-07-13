@@ -7,12 +7,6 @@ import DoctorTable from "../Components/DoctorTable";
 export default function DoctorListPage() {
     
 
-    const navigate = useNavigate();
-        
-    const goToLogin = () => {
-         navigate('./dashboard');
-    };
-
     return (
         <>
         <DoctorTable/>

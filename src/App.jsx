@@ -15,32 +15,43 @@ import MainLayout from './Layouts/MainLayout';
 import LoginForm from './Pages/LoginForm';
 import DashboardPage from './Pages/DashboardPage';
 import DoctorListPage from './Pages/DoctorListPage';
+import DoctorDetails from './Pages/DoctorDetails';
+import AppointmentForm from './Pages/Appointment';
+import NewAppointmentForm from './Pages/NewAppointment';
+import ProtectedRoute from './Pages/ProtectedRoute';
 
 
 import NoPage from './NoPage';
 
 
 function App() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+
   return (
     <>
       <Routes>
-        <Route path="/" element={<LoginForm />} 
-        />
-        <Route element={<MainLayout />}>
-            <Route path="/dashboard" 
-                  element={<DashboardPage/>}
-            />  
-            <Route path="/doctors" 
-                  element={<DoctorListPage/>}
-            />         
-        </Route>
+        <Route path="/" element={<LoginForm setIsLoggedIn={setIsLoggedIn} />} />
+
+        <Route element={<ProtectedRoute isLoggedIn={isLoggedIn}/>}
+        >
+            <Route element={<MainLayout setIsLoggedIn={setIsLoggedIn} />}>
+              {/* Clean up the slashes for the child sub-routes */}
+              <Route path="dashboard" element={<DashboardPage />} />
+              <Route path="doctors" element={<DoctorListPage />} />
+              <Route path="doctors/:id" element={<DoctorDetails />} />
+              <Route path="appointment/:name" element={<AppointmentForm />} />
+              <Route path="newappointment" element={<NewAppointmentForm />} />
+
+            </Route>
+          </Route>
+
       </Routes>
 
-      <div className="h-100 bg-blue-100 flex items-center justify-center">
-        <h1 className="text-4xl font-bold text-blue-600">Hospital Dashboard</h1>
-      </div>
 
-      <LoginForm />
+
+
     </>
   );
 }
