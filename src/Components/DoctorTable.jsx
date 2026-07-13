@@ -4,49 +4,13 @@ import { DoctorContext } from '../Context/DoctorContext';
 
 export default function DoctorTable() {
   //  Set up component states
-  const [doctors, setDoctors] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  //const [doctors, setDoctors] = useState([]);
+ 
 
-  const { favorites, toggleFavorite } = useContext(DoctorContext);
+  const { favorites, toggleFavorite, doctors } = useContext(DoctorContext);
+  console.log(favorites);
 
-
-  //  Fetch data from the API endpoint
-  useEffect(() => {
-    const fetchDoctors = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch('/doctors.json');
-
-        if (!response.ok) {
-          throw new Error('Failed to retrieve data from the server.');
-        }
-
-        const data = await response.json();
-        setDoctors(data);
-      } catch (err) {
-        setError(err.message || 'Something went wrong.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchDoctors();
-  }, []);
-
-  //  Render Loading state
-  if (loading) {
-    return (
-      <h2>Loading ...</h2>
-    );
-  }
-
-  // Render Error state
-  if (error) {
-    return (
-      <h2>Error ...</h2>
-    );
-  }
+ 
 
   // Render Data Grid Layout
   return (

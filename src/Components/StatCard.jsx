@@ -6,7 +6,7 @@ import { DoctorContext } from '../Context/DoctorContext';
 
 export default function StatCard({ users, query, originalUsers }) {
 
-    const { favorites, toggleFavorite } = useContext(DoctorContext);
+    const { favorites, toggleFavorite, doctors } = useContext(DoctorContext);
 
 
     return (

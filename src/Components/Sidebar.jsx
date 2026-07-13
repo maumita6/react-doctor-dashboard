@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate, Outlet } from 'react-router-dom';
+import { DoctorContext } from '../Context/DoctorContext';
 
 
 export default function Sidebar({setIsLoggedIn}) {
@@ -66,6 +67,12 @@ export default function Sidebar({setIsLoggedIn}) {
             </svg>
             Logout
           </a>
+          <hr className="mt-8 mb-8"/>
+          <Link
+          to={`/favorites/`}
+          className={`block w-full text-center px-4 py-2 text-red-400 text-sm font-semibold rounded-lg transition-all`}
+        > Favorites
+        </Link>
         </nav>
         <button
           className={`
