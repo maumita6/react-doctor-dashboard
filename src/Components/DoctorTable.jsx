@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { DoctorContext } from '../Context/DoctorContext';
 
 
 export default function DoctorTable() {
-  // 2. Set up component states
+  //  Set up component states
   const [doctors, setDoctors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // 3. Fetch data from the API endpoint
+  const { favorites, toggleFavorite } = useContext(DoctorContext);
+
+
+  //  Fetch data from the API endpoint
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
         setLoading(true);
-        // Replace with your actual backend API URL
         const response = await fetch('/doctors.json');
 
         if (!response.ok) {
@@ -31,21 +34,21 @@ export default function DoctorTable() {
     fetchDoctors();
   }, []);
 
-  // 4. Render Loading state
+  //  Render Loading state
   if (loading) {
     return (
       <h2>Loading ...</h2>
     );
   }
 
-  // 5. Render Error state
+  // Render Error state
   if (error) {
     return (
       <h2>Error ...</h2>
     );
   }
 
-  // 6. Render Data Grid Layout
+  // Render Data Grid Layout
   return (
     <div className="w-full p-6 bg-gray-50 min-h-screen">
       <div className="max-w-6xl mx-auto bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
@@ -79,8 +82,15 @@ export default function DoctorTable() {
                   {/* ID, Name & Email */}
                   <td className="px-6 py-4">
                     <div className="text-xs font-mono font-medium text-gray-400 mb-0.5">{doctor.id}</div>
-                    <div className="font-semibold text-gray-900 text-base">{doctor.name}</div>
+                    <div className="font-semibold text-gray-900 text-base">{doctor.name}&nbsp; 
+                    <button onClick={() => toggleFavorite(doctor.id)}>
+                     {
+                        favorites.includes(doctor.id) ? "⭐": "☆"
+                     }
+                    </button>
+                    </div>
                     <div className="text-xs text-gray-400 font-normal">{doctor.email}</div>
+                  
                   </td>
 
                   {/* Specialist & Qualification */}

@@ -1,24 +1,42 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
 import { Link, useNavigate, Outlet } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthContext';
+
 
 // Basic Tailwind login component structure
-export default function LoginForm({ setIsLoggedIn }) {
+export default function LoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    console.log(setIsLoggedIn);
+    //console.log(setIsLoggedIn);
+
+    const { setIsLoggedIn, setUser } = useContext(AuthContext);
+
+
+    //console.log(AuthContext);
 
     const navigate = useNavigate();
 
+    console.log('Login setIsLoggedIn', setIsLoggedIn);
+
     const goToLogin = () => {
+        {/* setIsLoggedIn(true); // done with prop drilling*/ }
         setIsLoggedIn(true);
-        navigate('./dashboard');
+        setUser(
+            { id: 1, 
+             name: "Jane Doe",  
+             role: "Patient"
+            });
+        navigate('/dashboard');
     };
 
     return (
         <>
-            <h1 className="text-4xl font-bold text-blue-600 flex h-200 items-center justify-center">Hospital Dashboard</h1>
 
+            <div className="max-w-full text-2xl font-bold text-blue-800 "> Hello&nbsp;Guest</div>
+            <h1 className="text-4xl font-bold text-blue-600 flex h-200 items-center justify-center">Hospital Dashboard
+            </h1>
             <div className="flex min-h-screen items-center justify-center bg-gray-100 p-4">
 
                 <div className="w-full max-w-md rounded-xl bg-white p-8 shadow-md space-y-6">

@@ -21,7 +21,15 @@ export default function StatCard({ users, query, originalUsers }) {
                             <div>
                                 <div className="flex items-start justify-between gap-4">
                                     <div>
-                                        <h3 className="text-lg font-bold text-gray-900 tracking-tight">{user.name} &nbsp;</h3>
+                                        <h3 className="text-lg font-bold text-gray-900 tracking-tight">{user.name} &nbsp;
+                                            <button onClick={() => toggleFavorite(user.id)
+                                            }>
+                                                {
+                                                    favorites.includes(user.id) ? "⭐" : "☆"
+                                                }
+                                            </button>
+
+                                        </h3>
                                         <p className="text-sm font-medium text-indigo-600">{user.specialist}</p>
                                         <p className="text-sm font-regular border-gray-50 pt-4">
                                             <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium border ${user.status ? 'bg-green-50 border-green-200 text-green-700' : 'bg-red-50 border-red-200 text-red-700'

@@ -19,6 +19,7 @@ import DoctorDetails from './Pages/DoctorDetails';
 import AppointmentForm from './Pages/Appointment';
 import NewAppointmentForm from './Pages/NewAppointment';
 import ProtectedRoute from './Pages/ProtectedRoute';
+import Favorites from './Pages/Favorites';
 
 
 import NoPage from './NoPage';
@@ -26,18 +27,17 @@ import NoPage from './NoPage';
 
 function App() {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<LoginForm setIsLoggedIn={setIsLoggedIn} />} />
 
         <Route element={<ProtectedRoute isLoggedIn={isLoggedIn}/>}
         >
             <Route element={<MainLayout setIsLoggedIn={setIsLoggedIn} />}>
-              {/* Clean up the slashes for the child sub-routes */}
               <Route path="dashboard" element={<DashboardPage />} />
               <Route path="doctors" element={<DoctorListPage />} />
               <Route path="doctors/:id" element={<DoctorDetails />} />
@@ -47,9 +47,26 @@ function App() {
             </Route>
           </Route>
 
+      </Routes>      */}
+
+
+      <Routes>
+        <Route path="/" element={<LoginForm />} />
+
+        <Route element={<ProtectedRoute/>}
+        >
+          <Route element={<MainLayout />}>
+            <Route path="dashboard" element={<DashboardPage />} />
+            <Route path="doctors" element={<DoctorListPage />} />
+            <Route path="doctors/:id" element={<DoctorDetails />} />
+            <Route path="appointment/:name" element={<AppointmentForm />} />
+            <Route path="newappointment" element={<NewAppointmentForm />} />
+            <Route path="favorites" element={<Favorites />} />
+
+          </Route>
+        </Route>
+
       </Routes>
-
-
 
 
     </>

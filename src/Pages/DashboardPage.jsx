@@ -1,13 +1,16 @@
 import { Link, useNavigate, Outlet } from 'react-router-dom';
 import StatCard from "../Components/StatCard";
 import Search from "../Components/Search";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { AuthContext } from '../Context/AuthContext';
 
 
 function DashboardPage() {
 
   const [users, setUsers] = useState([]);  
   const [query, setQuery] = useState("");
+  const { user } = useContext(AuthContext);
+
 
   useEffect(() => {
     // Path is relative to the public folder root
@@ -23,6 +26,7 @@ const filteredDoctors = users.filter(doctor =>
 
   return (
     <div className="flex flex-col gap-4">
+      <h2>Hello {user?.name}</h2>
       <div className="bg-slate-100 p-4 text-white">
         <Search query={query} setQuery={setQuery}/>
       </div>

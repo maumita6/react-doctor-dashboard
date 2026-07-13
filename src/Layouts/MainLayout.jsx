@@ -1,10 +1,11 @@
 import Sidebar from "../Components/Sidebar";
 import { Link, useNavigate, Outlet } from 'react-router-dom';
 
-function MainLayout({ setIsLoggedIn }) {
+function MainLayout() {
   return (
     <div className="flex">
-      <Sidebar setIsLoggedIn={setIsLoggedIn}/>
+      {/* T<Sidebar setIsLoggedIn={setIsLoggedIn}/> */}
+      <Sidebar/>
       <main className="flex-1 p-4">
         <Outlet />
       </main>
