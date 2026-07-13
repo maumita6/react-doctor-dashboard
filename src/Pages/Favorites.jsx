@@ -13,7 +13,7 @@ export default function Favorites() {
 
     return (
         <>
-            <h1 className="text-3xl font-bold text-blue-600 flex h-200 items-center justify-center">Favorite Doctors
+            <h1 className="text-3xl font-bold text-blue-600 flex h-200 items-center justify-center">Favorite Doctors&nbsp;{favorites.length}
             </h1>
             <ul>
                 {favoriteDoctors.map(doc => (

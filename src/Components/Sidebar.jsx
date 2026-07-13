@@ -5,6 +5,7 @@ import { DoctorContext } from '../Context/DoctorContext';
 
 export default function Sidebar({setIsLoggedIn}) {
   const [isOpen, setIsOpen] = useState(false);
+  const { favorites, toggleFavorite, doctors } = useContext(DoctorContext);
 
 
   const navigate = useNavigate();
@@ -71,7 +72,7 @@ export default function Sidebar({setIsLoggedIn}) {
           <Link
           to={`/favorites/`}
           className={`block w-full text-center px-4 py-2 text-red-400 text-sm font-semibold rounded-lg transition-all`}
-        > Favorites
+        > Favorites &nbsp;&nbsp;{favorites.length}
         </Link>
         </nav>
         <button
