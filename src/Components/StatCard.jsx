@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate, Outlet } from 'react-router-dom';
+import { DoctorContext } from '../Context/DoctorContext';
 
 
 
 export default function StatCard({ users, query, originalUsers }) {
+
+    const { favorites, toggleFavorite } = useContext(DoctorContext);
+
 
     return (
         <>
