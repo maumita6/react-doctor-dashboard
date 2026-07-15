@@ -20,8 +20,6 @@ import AppointmentForm from './Pages/Appointment';
 import NewAppointmentForm from './Pages/NewAppointment';
 import ProtectedRoute from './Pages/ProtectedRoute';
 import Favorites from './Pages/Favorites';
-
-
 import NoPage from './NoPage';
 
 
@@ -53,9 +51,10 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginForm />} />
 
-        <Route element={<ProtectedRoute/>}
-        >
+        <Route element={<ProtectedRoute/>}>
+
           <Route element={<MainLayout />}>
+
             <Route path="dashboard" element={<DashboardPage />} />
             <Route path="doctors" element={<DoctorListPage />} />
             <Route path="doctors/:id" element={<DoctorDetails />} />

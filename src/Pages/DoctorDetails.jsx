@@ -9,7 +9,7 @@ export default function DoctorDetails() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // FIXED: Added a leading slash '/' to ensure it fetches from public/doctors.json
+    // Added a leading slash '/' to ensure it fetches from public/doctors.json
     fetch('/doctors.json')
       .then((response) => response.json())
       .then((jsonData) => {

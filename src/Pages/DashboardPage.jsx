@@ -22,6 +22,7 @@ function DashboardPage() {
 
 const filteredDoctors = users.filter(doctor =>
   doctor.name.toLowerCase().includes(query.toLowerCase())).slice(0,4);
+  //bug : it searched doctor list only by name, it should search by department like Cardio, Degree etc also
 
 
   return (

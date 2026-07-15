@@ -4,7 +4,6 @@ import { DoctorContext } from '../Context/DoctorContext';
 
 
 export default function Sidebar({setIsLoggedIn}) {
-  const [isOpen, setIsOpen] = useState(false);
   const { favorites, toggleFavorite, doctors } = useContext(DoctorContext);
 
 
@@ -37,7 +36,6 @@ export default function Sidebar({setIsLoggedIn}) {
       <aside className={`
         fixed inset-y-0 left-0 z-40 w-64 bg-gray-900 text-white transform transition-transform duration-300 ease-in-out
         md:relative md:translate-x-0
-        ${isOpen ? 'translate-x-0' : '-translate-x-0.5'}
       `}>
         {/* Brand / Logo */}
         <div className="h-16 flex items-center justify-center border-b border-gray-800 px-6">
