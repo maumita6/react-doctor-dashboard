@@ -32,17 +32,14 @@ export default function Sidebar({setIsLoggedIn}) {
   return (
     <div className="flex h-screen bg-gray-100 overflow-hidden">
 
-      {/* Sidebar Container */}
       <aside className={`
         fixed inset-y-0 left-0 z-40 w-64 bg-gray-900 text-white transform transition-transform duration-300 ease-in-out
         md:relative md:translate-x-0
       `}>
-        {/* Brand / Logo */}
         <div className="h-16 flex items-center justify-center border-b border-gray-800 px-6">
           <span className="text-xl font-bold tracking-wider text-indigo-400">Dashboard</span>
         </div>
 
-        {/* Navigation Links */}
         <nav className="mt-6 px-4 space-y-1">
           <a href="#" onClick={goToDashboard} className="flex items-center px-4 py-2.5 text-sm font-medium rounded-lg bg-gray-800 text-white">
             <svg className="mr-3 h-5 w-5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
