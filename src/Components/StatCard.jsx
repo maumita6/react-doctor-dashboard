@@ -52,7 +52,6 @@ export default function StatCard({ users, query, originalUsers }) {
                                 </div>
                             </div>
 
-                            {/* New Book Appointment Link Section */}
                             <div className="mt-5 pt-4 border-t border-gray-100">
                                 <Link
                                     to={`/doctors/${user.id}`}
