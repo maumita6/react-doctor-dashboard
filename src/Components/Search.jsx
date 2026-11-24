@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, Outlet } from 'react-router-dom';
 
 
-// Basic Tailwind login component structure
 export default function Search({ query, setQuery }) {   
 
 
