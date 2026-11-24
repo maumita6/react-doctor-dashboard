@@ -12,22 +12,18 @@ export default function DoctorTable() {
 
  
 
-  // Render Data Grid Layout
   return (
     <div className="w-full p-6 bg-gray-50 min-h-screen">
       <div className="max-w-6xl mx-auto bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
 
-        {/* Table Title Header */}
         <div className="px-6 py-4 border-b border-gray-200 bg-white">
           <h2 className="text-xl font-bold text-gray-900">Medical Staff Directory</h2>
           <p className="text-sm text-gray-500 mt-1">A list of all active doctors, qualifications, and schedules.</p>
         </div>
 
-        {/* Responsive Wrapper for Mobile Scrolling */}
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-left text-sm text-gray-500">
 
-            {/* Table Header */}
             <thead className="bg-gray-50 text-xs font-semibold uppercase tracking-wider text-gray-700 border-b border-gray-200">
               <tr>
                 <th scope="col" className="px-6 py-4 font-semibold">Doctor Details</th>
@@ -38,12 +34,10 @@ export default function DoctorTable() {
               </tr>
             </thead>
 
-            {/* Table Body - Dynamic Loop */}
             <tbody className="divide-y divide-gray-200 bg-white">
               {doctors.map((doctor) => (
                 <tr key={doctor.id} className="transition-colors hover:bg-gray-50/70">
 
-                  {/* ID, Name & Email */}
                   <td className="px-6 py-4">
                     <div className="text-xs font-mono font-medium text-gray-400 mb-0.5">{doctor.id}</div>
                     <div className="font-semibold text-gray-900 text-base">{doctor.name}&nbsp; 
@@ -57,24 +51,21 @@ export default function DoctorTable() {
                   
                   </td>
 
-                  {/* Specialist & Qualification */}
                   <td className="px-6 py-4">
                     <div className="font-medium text-indigo-600">{doctor.specialist}</div>
                     <div className="text-xs text-gray-500 mt-0.5">{doctor.qualification}</div>
                   </td>
 
-                  {/* Experience */}
                   <td className="px-6 py-4 whitespace-nowrap">
                     <span className="inline-flex items-center gap-1 font-medium text-gray-800">
                       {doctor.exp} <span className="text-xs text-gray-400 font-normal">years</span>
                     </span>
                   </td>
 
-                  {/* Schedule Days Map */}
                   <td className="px-6 py-4">
                     <div className="flex flex-wrap gap-1.5 max-w-xs">
                       {doctor.days.map((day, index) => (
-                        <span
+                <span
                           key={index}
                           className="inline-block rounded-md bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-600 border border-gray-200/50"
                         >
@@ -84,7 +75,6 @@ export default function DoctorTable() {
                     </div>
                   </td>
 
-                  {/* Active/Inactive Status Badge */}
                   <td className="px-6 py-4 whitespace-nowrap">
 
                     <span className={`h-1.5 w-1.5 rounded-full ${doctor.status === 'Active' ? 'bg-emerald-500' : 'bg-amber-500'}`} />
