@@ -8,7 +8,6 @@ export default function AppointmentForm() {
   const { name} = useParams(); // Grabs "DOC004" from the URL
 
 
-  // 1. Unified form field state
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -17,30 +16,22 @@ export default function AppointmentForm() {
     timeSlot: ''
   });
 
-  // Form validation error state
   const [errors, setErrors] = useState({});
-
-  // Form submission tracking status
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  // Available slots 
   const timeSlots = ['09:00', '10:30', '13:00', '14:30', '16:00'];
 
-  // Handle all textual, select, and input field updates
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,         // Copy all existing form data name: "username",
-      [name]: value,       // Dynamically update ONLY the field that changed value: "john_doe",
+      [name]: value,      
     });
 
-    // Clear errors inline as the user fixes them
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
   };
 
-  // Run comprehensive form validation rules
   const validateForm = () => {
     let localErrors = {};
     let isValid = true;
@@ -88,7 +79,6 @@ export default function AppointmentForm() {
     return isValid;
   };
 
-  // Form submission handler logic
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitted(false);
@@ -111,12 +101,11 @@ export default function AppointmentForm() {
 
       {isSubmitted && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 text-green-700 text-sm rounded-lg text-center font-medium animate-fade-in">
-          🎉 Appointment requested successfully! Check your inbox soon.
+           Appointment requested successfully! Check your inbox
         </div>
       )}
 
       <form onSubmit={handleSubmit} noValidate className="space-y-5">
-        {/* Full Name */}
         <div>
           <label htmlFor="fullName" className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1">Full Name</label>
           <input
@@ -132,7 +121,6 @@ export default function AppointmentForm() {
           {errors.fullName && <p className="text-xs text-red-500 mt-1 font-medium">{errors.fullName}</p>}
         </div>
 
-        {/* Email Address */}
         <div>
           <label htmlFor="email" className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1">Email Address</label>
           <input
@@ -148,7 +136,6 @@ export default function AppointmentForm() {
           {errors.email && <p className="text-xs text-red-500 mt-1 font-medium">{errors.email}</p>}
         </div>
 
-        {/* Service Selector Selection */}
         <div>
           <label htmlFor="service" className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1">Select Service</label>
           <select
@@ -167,7 +154,6 @@ export default function AppointmentForm() {
           {errors.service && <p className="text-xs text-red-500 mt-1 font-medium">{errors.service}</p>}
         </div>
 
-        {/* Date Selection */}
         <div>
           <label htmlFor="date" className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-1">Preferred Date</label>
           <input
@@ -182,7 +168,6 @@ export default function AppointmentForm() {
           {errors.date && <p className="text-xs text-red-500 mt-1 font-medium">{errors.date}</p>}
         </div>
 
-        {/* Custom Radio Group for Available Time Slots */}
         <div>
           <label className="block text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">Available Times</label>
           <div className="grid grid-cols-3 gap-2">
@@ -211,7 +196,6 @@ export default function AppointmentForm() {
 
 
 
-        {/* Submit Action */}
         <button
           type="submit"
           className="w-full py-3 px-4 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
