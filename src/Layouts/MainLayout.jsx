@@ -4,7 +4,6 @@ import { Link, useNavigate, Outlet } from 'react-router-dom';
 function MainLayout() {
   return (
     <div className="flex">
-      {/* T<Sidebar setIsLoggedIn={setIsLoggedIn}/> */}
       <Sidebar/>
       <main className="flex-1 p-4">
         <Outlet />
